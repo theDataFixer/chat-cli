@@ -6,7 +6,7 @@ Chat with Groq-powered AI models directly in your terminal CLI.
 
 ## Purpose
 
-This `chat-cli` is designed to provide a simple, fast, and free alternative for chatting with Groq-powered AI models directly in your terminal. Unlike other large language models (LLMs) such as OpenAI's GPT, Gemini, or Claude, this tool emphasizes speed and ease of use.
+This `chat-cli` is designed to provide a simple, fast, and free alternative for chatting with Groq-powered AI models directly in your terminal. Unlike other large language models (LLMs) such as OpenAI's GPT, Gemini, or Claude, this tool is completely free to use--you don't pay anything-- and prioritizes ease of use.
 
 The tool supports multiple models such as `mixtral`, `llama-70b`, and `llama-8b-instant` (default), and allows seamless interaction with these models via a command-line interface.
 
@@ -30,6 +30,22 @@ go install github.com/theDataFixer/chat-cli@latest
 ```
 
 ## Usage
+
+### Environment Variables
+
+If you haven't created your Groq API key, go to the [GroqCloud Console](https://console.groq.com), create an account and create the key.
+
+Set your Groq API Key for authentication:
+
+```bash
+export GROQ_API_KEY=your-api-key-here
+```
+
+Set your preferred model (default is `llama-8b-instant`)
+
+```bash
+export GROQ_MODEL=llama-8b-instant # Options: mixtral, llama-70b, llama-instant
+```
 
 ### Start Chatting
 
@@ -71,27 +87,9 @@ To exit the chat session:
 exit
 ```
 
-## Environment Variables
+### Model details
 
-### GROQ_API_KEY
-
-Set your Groq API Key for authentication:
-
-```bash
-export GROQ_API_KEY=your-api-key-here
-```
-
-### GROQ_MODEL
-
-Set your preferred model (default is `llama-8b-instant`)
-
-```bash
-export GROQ_MODEL=llama-8b-instant # Options: mixtral, llama-70b, llama-instant
-```
-
-### Supported Models
-
-The following models are supported:
+The following models are:
 
 | Model Name    | Description          | Context Length |
 | ------------- | -------------------- | -------------- |
@@ -99,7 +97,7 @@ The following models are supported:
 | llama-70b     | Versatile but larger | 8,192 tokens   |
 | llama-instant | Fastest              | 8,192 tokens   |
 
-You can change the model dynamically by setting the GROQ_MODEL environment variable without modifying the code.
+You can change the model dynamically by setting the GROQ_MODEL environment variable.
 
 ## Troubleshooting
 
@@ -134,7 +132,7 @@ print(is_palindrome("python"))   # False
 
 - It is a simple binary, with some minor tweaks regarding decorations.
 - It is a project for learning Golang, so you may find some bad practices or some bad code (if so, please let me know).
-- Just three models, making it simpler. Maybe in the future I will add more models.
+- Hopefully this `chat-cli` will become more robust either by contributions or by personal upgrades.
 
 ## Contributing
 
